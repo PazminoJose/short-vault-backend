@@ -1,0 +1,19 @@
+# IDE specific
+.vscode/
+
+# Virtual environment
+.venv/
+env/
+venv/
+
+# Python specific
+__pycache__/
+.mypy_cache/
+*.pyc
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Environment variables and secrets
+.env
+.env.*
