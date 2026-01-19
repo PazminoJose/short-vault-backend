@@ -1,5 +1,7 @@
 import os
+import sys
 from logging.config import fileConfig
+from pathlib import Path
 
 from dotenv import load_dotenv
 from sqlalchemy import engine_from_config, pool
@@ -7,9 +9,15 @@ from sqlmodel import SQLModel
 
 from alembic import context
 
-# Add src directory to path
+# Add src directory to sys.path
+src_path = Path(__file__).resolve().parent.parent / "src"
+sys.path.insert(0, str(src_path))
+
+# Import models for Alembic autogenerate
 from modules.shorts.models import *  # noqa
 from modules.tags.models import *  # noqa
+from modules.users.models import *  # noqa
+from modules.db_relations.models import *  # noqa
 
 # Load environment variables from .env file
 load_dotenv()
