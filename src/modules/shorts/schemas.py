@@ -8,7 +8,6 @@ class ShortBase(SQLModel):
     platform: str = Field(nullable=False)
     cover_url: str  = Field(nullable=False)
     short_url: str  = Field(nullable=False)
-    user_id: int = Field(nullable=False, foreign_key="user.id")
 
 class ShortPublic(ShortBase):
     id: int

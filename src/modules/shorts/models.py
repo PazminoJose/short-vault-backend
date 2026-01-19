@@ -11,3 +11,4 @@ if TYPE_CHECKING:
 
 class Short(BaseTableModel, ShortBase, table=True):
     tags: list["Tag"] = Relationship(back_populates="shorts", link_model=ShortTag)
+    user_id: int = Field(nullable=False, foreign_key="user.id")
