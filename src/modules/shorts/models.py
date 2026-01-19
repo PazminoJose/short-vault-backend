@@ -1,9 +1,13 @@
+from typing import TYPE_CHECKING
 from pydantic import Field
-
+from sqlmodel import Relationship
 from core.models import BaseTableModel
+from modules.db_relations.models import ShortTag
 from modules.shorts.schemas import ShortBase
+
+if TYPE_CHECKING:
+    from modules.tags.models import Tag
 
 
 class Short(BaseTableModel, ShortBase, table=True):
-    userID: int = Field(nullable=False)
-    pass
+    tags: list["Tag"] = Relationship(back_populates="shorts", link_model=ShortTag)
