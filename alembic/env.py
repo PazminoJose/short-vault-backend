@@ -14,10 +14,10 @@ src_path = Path(__file__).resolve().parent.parent.joinpath("src")
 sys.path.insert(0, str(src_path))
 
 # Import models for Alembic autogenerate
-from modules.shorts.models import *  # noqa
-from modules.tags.models import *  # noqa
-from modules.users.models import *  # noqa
-from modules.db_relations.models import *  # noqa
+from src.modules.shorts.models import *  # noqa
+from src.modules.tags.models import *  # noqa
+from src.modules.users.models import *  # noqa
+from src.modules.db_relations.models import *  # noqa
 
 # Load environment variables from .env file
 load_dotenv()

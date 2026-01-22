@@ -1,12 +1,14 @@
 from typing import TYPE_CHECKING
+
 from pydantic import Field
 from sqlmodel import Relationship
-from core.models import BaseTableModel
-from modules.db_relations.models import ShortTag
-from modules.shorts.schemas import ShortBase
+
+from src.core.models import BaseTableModel
+from src.modules.db_relations.models import ShortTag
+from src.modules.shorts.schemas import ShortBase
 
 if TYPE_CHECKING:
-    from modules.tags.models import Tag
+    from src.modules.tags.models import Tag
 
 
 class Short(BaseTableModel, ShortBase, table=True):
