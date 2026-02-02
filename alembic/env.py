@@ -9,9 +9,9 @@ from sqlmodel import SQLModel
 
 from alembic import context
 
-# Add src directory to sys.path
-src_path = Path(__file__).resolve().parent.parent.joinpath("src")
-sys.path.insert(0, str(src_path))
+# Add project root to sys.path (so `src` is importable as a package)
+project_root = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(project_root))
 
 # Import models for Alembic autogenerate
 from src.modules.shorts.models import *  # noqa
