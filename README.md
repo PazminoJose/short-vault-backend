@@ -26,3 +26,13 @@ Backend FastAPI con SQLModel y Alembic.
 - src/core: config y database.
 - src/modules: routers, modelos y servicios de dominio.
 - alembic/: configuración y migraciones.
+
+## Migraciones 
+Crear migración
+```bash
+alembic revision --autogenerate -m "message"
+```
+Aplicar migración
+```bash
+alembic upgrade head
+```
